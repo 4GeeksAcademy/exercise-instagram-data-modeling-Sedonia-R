@@ -50,7 +50,7 @@ class Comment(Base):
     __tablename__ = 'comment'
     id = Column(Integer, primary_key=True)
     comment_text = Column(String(2000), nullable=False)
-    author_id = Column(Integer, ForeignKey('author.id'))
+    author_id = Column(Integer, ForeignKey('user.id'))
     post_id = Column(Integer, ForeignKey('post.id'))
     author = relationship(User)
     post = relationship(Post)
